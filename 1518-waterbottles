@@ -1,0 +1,18 @@
+class Solution {
+    public int numWaterBottles(int numBottles, int numExchange) {
+        int sum=0,ma,b=numBottles;
+        while(true)
+        {
+            ma=numBottles/numExchange;
+            sum=sum+ma;
+            ma=ma+(numBottles%numExchange);
+            if(ma>=numExchange)
+            numBottles=ma;
+            else
+            break;
+
+        }
+        sum=sum+b;
+        return sum;
+    }
+}
