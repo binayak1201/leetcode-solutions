@@ -1,0 +1,22 @@
+class Solution {
+    public int firstUniqChar(String s) {
+        int c=0;
+       for(int i=0;i<s.length();i++)
+       {
+           for(int j=0;j<s.length();j++)
+           {
+               if(s.charAt(j)==s.charAt(i) && i!=j)
+               {
+                   c=1;
+                   break;
+               }
+           }
+        if(c==1)
+            c=0;
+        else
+            return i;
+       }
+        return -1;
+        
+    }
+}
