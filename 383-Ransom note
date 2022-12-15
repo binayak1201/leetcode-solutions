@@ -1,0 +1,33 @@
+class Solution {
+public:
+    bool canConstruct(string r, string m) {
+        int j=0,c=0,i,k=0;
+         if(m.length()>=r.length())
+        {
+            int a[r.length()],b[m.length()];
+            for(i=0;i<r.length();i++)
+                a[i]=r[i];
+            for(int i=0;i<m.length();i++)
+                b[i]=m[i]; 
+            for(i=0;i<r.length();i++)
+            {
+                for(j=0;j<m.length();j++)
+                {
+                    if(a[i]==b[j])
+                    {
+                        c++;
+                        b[j]=48;
+                        break;
+                    }
+                }
+               
+            }
+         if(c==r.length())
+             return true;
+         else
+             return false;
+        }
+        else
+             return false;
+    }
+};
