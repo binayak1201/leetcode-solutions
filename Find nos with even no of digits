@@ -1,0 +1,22 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+        int c1=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            int j=nums[i],c=0;
+            while(j>0)
+            {
+                c++;
+                j=j/10;
+            }
+            if(c%2==0)
+            {
+                c1++;
+            }
+            c=0;
+
+            
+        }
+        return c1;
+    }
+}
