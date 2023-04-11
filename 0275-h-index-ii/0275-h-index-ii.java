@@ -1,13 +1,21 @@
 class Solution {
     public int hIndex(int[] citations) {
-        int max=citations.length;
-        for(int i=0;i<citations.length;i++)
+        int n=citations.length;
+        int ans=0;
+        int l=0,h=citations.length;
+        while(l<h)
         {
-            if(max-i<=citations[i])
+            int mid=l+(h-l)/2;
+            if(n-mid<=citations[mid])
             {
-                return max-i;
+                ans=Math.max(n-mid,ans);
+                h=mid;
+            }
+            else
+            {
+                l=mid+1;
             }
         }
-        return 0;
+        return ans;
     }
 }
